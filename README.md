@@ -153,18 +153,19 @@ causal-quant-research/
 ├── README.md
 ├── requirements.txt
 ├── data/
-│   ├── fetch_yfinance_fred.py      # Free API data (Equities, Macro, VIX)
-│   └── kaggle_downloader.py        # Script to pull Kaggle datasets via CLI
+│   ├── fetch_yfinance_fred.py      # Free API data ingestion (Equities, Macro, VIX)
+│   └── kaggle_downloader.py        # CLI script to download high-frequency/LOB datasets from Kaggle
 ├── methods/
-│   ├── 01_time_series_causality.py # Ch 22: Granger/Sims Causality (Crypto)
-│   ├── 02_instrumental_variables.py# Ch 4 & 18: IV & Natural Experiments (Macro)
-│   ├── 03_causal_dag_selection.py  # Ch 3 & 6: Back-door criterion & Colliders
-│   ├── 04_dynamic_treatments.py    # Ch 8 & 17: G-computation & MSMs
-│   ├── 05_mediation_analysis.py    # Ch 11 & 12: Pearl's Mediation Formula
-│   └── 06_sensitivity_analysis.py  # Ch 19: Rosenbaum Bounds & Unmeasured Confounding
+│   ├── 01_time_series_causality.py # Ch 22: Granger/Sims Causality & Lead-Lag Analysis (Crypto)
+│   ├── 02_instrumental_variables.py# Ch 4 & 18: IV & Natural Experiments (Macro/Microstructure)
+│   ├── 03_causal_dag_selection.py  # Ch 3 & 6: Back-Door/Front-Door Criterion & Avoiding Collider Bias
+│   ├── 04_dynamic_treatments.py    # Ch 8 & 17: Dynamic Position Sizing, G-computation & MSMs
+│   ├── 05_mediation_analysis.py    # Ch 11 & 12: Pearl's Mediation Formula for Factor Decomposition
+│   └── 06_sensitivity_analysis.py  # Ch 19: Rosenbaum Bounds & Unmeasured Market Confounding
 └── utils/
-    ├── dag_plotter.py              # Visualizing causal graphs
-    └── metrics.py                  # Causal Sharpe, Design Sensitivity
+    ├── dag_plotter.py              # Utilities for rendering and validating Causal DAGs
+    └── metrics.py                  # Custom quantitative metrics (Causal Sharpe, Design Sensitivity Gamma)
+
 -----------------
 # Causal Quant Research
 Moving beyond associational backtesting to structural causal inference in quantitative finance. 
